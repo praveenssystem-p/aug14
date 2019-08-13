@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>WELCOME TO CBT</title>
+    <script type="text/javascript">
+        function loadtech()
+        {
+            var tech = [".net", "java", "BI", "cloud"];
+            var fee=[2000,3000,4000,5000]
+            var list = document.getElementById("1sttech");
+            for (var t in tech)
+            {
+                var myoption = document.createElement("option");
+                myoption.text = tech[t];
+                myoption.value = fee[t];
+                list.add(myoption);
+            }
+        }
+        function siri()
+        {
+            var pa = document.getElementById("name").value;
+            pa = pa + " " + document.getElementById("1sttech").value;
+            var text = document.getElementById("ans");
+            text.innerHTML="<h1>" + pa + " is fee<h1/>"
+        }
+        function funcbold()
+        {
+            var div = document.getElementById("resultdiv");
+            var chkbox = document.getElementById("chkbold");
+            if (chkbox.checked = true)
+                div.style.fontweight = "bold";
+            else
+                div.style.fontWeight = "normal";
+        }
+
+    </script>
+</head>
+<body  onload="loadtech()">
+    <center><h1>CBT COURSE </h1>
+        <div style=" BORDER: double; padding:45PX ;WIDTH:300PX;background-color:lavenderblush; margin-left:20PX;">
+                
+            <form action="" method="get">
+                employeeid:<input type="text" placeholder="Employee ID" id="eid" required> <br /> <br / >
+                emplyee name : <input type="text" placeholder="Employee NAME" id="name"> <br /> <br / >
+                Email: <input type="Email" autocomplete="off"> <br /> <br / >
+                technology:<input type="text" placeholder="tech" required> <br /> <br / >
+                Choose courses: <input list="courses" /> <br / >
+                <!--<datalist id="Courses">
+        <option value="c#">
+        <option value="c++">
+        <option value="java">
+        <option value=".net">
+    </datalist>-->
+                <select id="1sttech"></select>
+                <br />
+                start date: <input type="date" name="start date"> <br /> <br / >
+                end date: <input type="date" name="end date"> <br /> <br / >
+                Choose other facility: <input list="fac" name="fac">
+                <datalist id="fac">
+                    <option value="virtual lab">
+                    <option value="online exam">
+                    <option value="practical test">
+                    <option value="online instructor">
+                </datalist>
+                <br / >
+                <br / >
+
+                <input type="checkbox" id="chkbold" onclick="funcbold()"/ >Bold
+                <input type="checkbox" id="chkitalic" onclick="funcItalic()"/ >Italic
+                <input type="checkbox" id="chkunderline" onclick="funcunderline()"/ >undeline
+
+
+            </form>
+        </div>
+    <div id="resultdiv">Sonata</div>
+    </center>
+  
+            </body >
+            </html >
